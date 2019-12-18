@@ -10,27 +10,27 @@ const typeDefs = gql`
 
   type Launch {
     id: ID!
-    site: string
+    site: String
     mission: Mission
     rocket: Rocket
-    isBooked: boolean 
+    isBooked: Boolean 
   }
 
   type Rocket {
     id: ID!
-    name: string
-    type: string
+    name: String
+    type: String
   }
 
   type User {
     id: ID!
-    email: string!
+    email: String!
     trips: [Launch]!
   }
 
   type Mission {
-    name: string
-    missionPatch(site: PatchSize): string
+    name: String
+    missionPatch(site: PatchSize): String
   }
 
   enum PatchSize {
@@ -45,12 +45,12 @@ const typeDefs = gql`
     # if false, cancellation failed -- check errors
     cancelTrips(launchId: ID!): TripUpdateResponse!
 
-    login(email: string): String # login token
+    login(email: String): String # login token
   }
 
   type TripUpdateResponse {
-    success: boolean!
-    message: string
+    success: Boolean!
+    message: String
     launches: [Launch]
   }
 `;
