@@ -13,7 +13,6 @@ export const LAUNCH_TILE_DATA = gql`
       name
     }
     mission {
-      id
       name
       missionPatch
     }
@@ -40,8 +39,7 @@ export default function Launches() {
     return <Loading />;
   
   if (error)
-    return <p>ERROR</p>;
-
+    return <p>ERROR: {error.message}</p>;
 
   return (
     <Fragment>
